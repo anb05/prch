@@ -18,12 +18,14 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 set(HEADERS
     application.hpp
     projectdialog.hpp
+    projectlistwidget.hpp
     )
 
 set(SRC
     application.cpp
     main.cpp
     projectdialog.cpp
+    projectlistwidget.cpp
     )
 
 add_executable(${PR_NAME} ${HEADERS} ${SRC})
