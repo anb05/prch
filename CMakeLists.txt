@@ -28,6 +28,10 @@ set(SRC
     projectlistwidget.cpp
     )
 
-add_executable(${PR_NAME} ${HEADERS} ${SRC})
+set(ASSETS
+    assets.qrc
+    )
+
+add_executable(${PR_NAME} ${HEADERS} ${SRC} ${ASSETS})
 
 target_link_libraries(${PR_NAME} PRIVATE Qt5::Widgets)

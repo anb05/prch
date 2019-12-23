@@ -14,7 +14,7 @@ namespace prch {
 ProjectListWidget::ProjectListWidget(QWidget* parent)
     : QListWidget(parent)
 {
-	setAcceptDrops(true);
+    setAcceptDrops(true);
 }
 
 ProjectListWidget::~ProjectListWidget()
@@ -22,24 +22,24 @@ ProjectListWidget::~ProjectListWidget()
 
 void ProjectListWidget::mousePressEvent(QMouseEvent* event)
 {
-	if (Qt::LeftButton == event->button()) {
-		_startPos = event->pos();
-	}
+    if (Qt::LeftButton == event->button()) {
+        _startPos = event->pos();
+    }
 
-	QListWidget::mousePressEvent(event);
+    QListWidget::mousePressEvent(event);
 }
 
 void ProjectListWidget::mouseMoveEvent(QMouseEvent* event)
 {
-	if (event->buttons() & Qt::LeftButton) {
-		int distance = (event->pos() - _startPos).manhattanLength();
+    if (event->buttons() & Qt::LeftButton) {
+        int distance = (event->pos() - _startPos).manhattanLength();
 
-		if (QApplication::startDragDistance() < distance) {
-			performDrag();
-		}
-	}
+        if (QApplication::startDragDistance() < distance) {
+            performDrag();
+        }
+    }
 
-	QListWidget::mouseMoveEvent(event);
+    QListWidget::mouseMoveEvent(event);
 }
 
 void ProjectListWidget::dragEnterEvent(QDragEnterEvent* event)
@@ -59,14 +59,21 @@ void ProjectListWidget::dropEvent(QDropEvent* event)
 
 void ProjectListWidget::performDrag()
 {
-	QListWidgetItem* item = currentItem();
+    QListWidgetItem* item = currentItem();
 
-	if (item) {
-		QMimeData* mimeData = new QMimeData;
-		mimeData->setText(item->text());
+    if (!item) {
+        return;
+    }
 
-		QDrag* drag = new QDrag(this);
-	}
+    QMimeData* mimeData = new QMimeData;
+    mimeData->setText(item->text());
+
+    QDrag* drag = new QDrag(this);
+    drag->setMimeData(mimeData);
+    drag->setPixmap(QPixmap(":/img/person"));
+
+    if (drag->exec(Qt::MoveAction) == Qt::MoveAction)
+        delete item;
 }
 
 } // namespace prch

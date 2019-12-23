@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/img">
+        <file alias="left_arrow">assets/leftarrow.png</file>
+        <file alias="person">assets/person.png</file>
+        <file alias="right_arrow">assets/rightarrow.png</file>
+    </qresource>
+</RCC>
