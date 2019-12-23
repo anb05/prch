@@ -36,7 +36,7 @@ private:
     void performDrag();
 
 private:
-    QPoint _starPos;
+	QPoint _startPos;
 };
 
 } // namespace prch
