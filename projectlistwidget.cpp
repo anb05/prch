@@ -44,17 +44,33 @@ void ProjectListWidget::mouseMoveEvent(QMouseEvent* event)
 
 void ProjectListWidget::dragEnterEvent(QDragEnterEvent* event)
 {
+    ProjectListWidget* soure = qobject_cast<ProjectListWidget*>(event->source());
 
+    if (soure && (soure != this)) {
+        event->setDropAction(Qt::MoveAction);
+        event->accept();
+    }
 }
 
 void ProjectListWidget::dragMoveEvent(QDragMoveEvent* event)
 {
+    ProjectListWidget* soure = qobject_cast<ProjectListWidget*>(event->source());
 
+    if (soure && (soure != this)) {
+        event->setDropAction(Qt::MoveAction);
+        event->accept();
+    }
 }
 
 void ProjectListWidget::dropEvent(QDropEvent* event)
 {
+    ProjectListWidget* source = qobject_cast<ProjectListWidget*>(event->source());
 
+    if (source && (source != this)) {
+        addItem(event->mimeData()->text());
+        event->setDropAction(Qt::MoveAction);
+        event->accept();
+    }
 }
 
 void ProjectListWidget::performDrag()
