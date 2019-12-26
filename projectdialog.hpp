@@ -31,8 +31,8 @@ public slots:
     void onRightButtonClicked();
 
 private:
-    void moveCurrentItem(ProjectListWidget* source,
-                         ProjectListWidget* target);
+//    void moveCurrentItem(ProjectListWidget* source,
+//                         ProjectListWidget* target);
 
 private:
 	Ui::ProjectDialog* _pProjectDialog {nullptr};

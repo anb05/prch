@@ -16,9 +16,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 set(HEADERS
-    application.hpp
+	application.hpp
     projectdialog.hpp
-    projectlistwidget.hpp
+	projectlistwidget.hpp
     )
 
 set(SRC
@@ -36,6 +36,8 @@ set(FORMS
 	projectdialog.ui
 	)
 
-add_executable(${PR_NAME} ${FORMS} ${HEADERS} ${SRC} ${ASSETS})
+qt5_wrap_ui(UI_FORMS ${FORMS})
+
+add_executable(${PR_NAME} ${UI_FORMS} ${HEADERS} ${SRC} ${ASSETS})
 
 target_link_libraries(${PR_NAME} PRIVATE Qt5::Widgets)

@@ -27,10 +27,11 @@ void ProjectDialog::onRightButtonClicked()
 
 }
 
-void ProjectDialog::moveCurrentItem(ProjectListWidget* source, ProjectListWidget* target)
-{
+//void ProjectDialog::moveCurrentItem(ProjectListWidget* source,
+//									ProjectListWidget* target)
+//{
 
-}
+//}
 
 } // namespace prch
 
