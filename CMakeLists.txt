@@ -32,6 +32,10 @@ set(ASSETS
     assets.qrc
     )
 
-add_executable(${PR_NAME} ${HEADERS} ${SRC} ${ASSETS})
+set(FORMS
+	projectdialog.ui
+	)
+
+add_executable(${PR_NAME} ${FORMS} ${HEADERS} ${SRC} ${ASSETS})
 
 target_link_libraries(${PR_NAME} PRIVATE Qt5::Widgets)

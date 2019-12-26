@@ -3,6 +3,10 @@
 
 #include <QDialog>
 
+namespace Ui {
+class ProjectDialog;
+} // namespace Ui
+
 class ProjectListWidget;
 
 namespace prch {
@@ -29,6 +33,9 @@ public slots:
 private:
     void moveCurrentItem(ProjectListWidget* source,
                          ProjectListWidget* target);
+
+private:
+	Ui::ProjectDialog* _pProjectDialog {nullptr};
 };
 
 } // namespace prch
