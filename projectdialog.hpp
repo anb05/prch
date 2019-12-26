@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class ProjectListWidget;
+
 namespace prch {
 
 class ProjectDialog : public QDialog
@@ -20,6 +22,13 @@ public:
     ProjectDialog& operator= (const ProjectDialog& ) = delete;
     ProjectDialog& operator= (ProjectDialog&& )      = delete;
 
+public slots:
+    void onLeftButtonClicked();
+    void onRightButtonClicked();
+
+private:
+    void moveCurrentItem(ProjectListWidget* source,
+                         ProjectListWidget* target);
 };
 
 } // namespace prch
