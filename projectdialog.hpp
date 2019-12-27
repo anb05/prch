@@ -2,12 +2,11 @@
 #define PROJECTDIALOG_HPP
 
 #include <QDialog>
+#include "projectlistwidget.hpp"
 
 namespace Ui {
 class ProjectDialog;
 } // namespace Ui
-
-class ProjectListWidget;
 
 namespace prch {
 
@@ -31,11 +30,11 @@ public slots:
     void onRightButtonClicked();
 
 private:
-//    void moveCurrentItem(ProjectListWidget* source,
-//                         ProjectListWidget* target);
+	void moveCurrentItem(ProjectListWidget* source,
+						 ProjectListWidget* target);
 
 private:
-	Ui::ProjectDialog* _pProjectDialog {nullptr};
+	Ui::ProjectDialog* _pProjectDialog ;
 };
 
 } // namespace prch

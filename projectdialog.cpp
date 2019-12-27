@@ -13,7 +13,7 @@ ProjectDialog::ProjectDialog(QWidget *parent)
 
 ProjectDialog::~ProjectDialog()
 {
-	delete _pProjectDialog;
+//	delete _pProjectDialog;
 }
 
 
@@ -27,11 +27,11 @@ void ProjectDialog::onRightButtonClicked()
 
 }
 
-//void ProjectDialog::moveCurrentItem(ProjectListWidget* source,
-//									ProjectListWidget* target)
-//{
+void ProjectDialog::moveCurrentItem(ProjectListWidget* source,
+									ProjectListWidget* target)
+{
 
-//}
+}
 
 } // namespace prch
 
