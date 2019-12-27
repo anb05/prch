@@ -13,12 +13,11 @@ SOURCES   +=                       \
 HEADERS   +=                       \
              application.hpp       \
              projectdialog.hpp     \
-#             projectdialog.h       \
              projectlistwidget.hpp
 
 RESOURCES +=                       \
              assets.qrc
 
 FORMS     +=                       \
-#             projectdialog.ui
+             projectdialog.ui
 

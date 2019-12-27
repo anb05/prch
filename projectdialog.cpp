@@ -13,7 +13,7 @@ ProjectDialog::ProjectDialog(QWidget *parent)
 
 ProjectDialog::~ProjectDialog()
 {
-//	delete _pProjectDialog;
+	delete _pProjectDialog;
 }
 
 

@@ -2,11 +2,11 @@
 #define PROJECTDIALOG_HPP
 
 #include <QDialog>
-#include "projectlistwidget.hpp"
+#include "ui_projectdialog.h"
 
-namespace Ui {
-class ProjectDialog;
-} // namespace Ui
+//namespace Ui {
+//class ProjectDialog;
+//} // namespace Ui
 
 namespace prch {
 
