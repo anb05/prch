@@ -2,11 +2,16 @@
 #define PROJECTDIALOG_HPP
 
 #include <QDialog>
-#include "ui_projectdialog.h"
 
-//namespace Ui {
-//class ProjectDialog;
-//} // namespace Ui
+namespace Ui {
+class ProjectDialog;
+} // namespace Ui
+
+namespace prch {
+class ProjectListWidget;
+} // namespace prch
+
+class QAction;
 
 namespace prch {
 
@@ -26,15 +31,15 @@ public:
     ProjectDialog& operator= (ProjectDialog&& )      = delete;
 
 public slots:
-    void onLeftButtonClicked();
-    void onRightButtonClicked();
+    void onLeftButtonClicked(QAction*);
+    void onRightButtonClicked(QAction*);
 
 private:
-	void moveCurrentItem(ProjectListWidget* source,
-						 ProjectListWidget* target);
+    void moveCurrentItem(ProjectListWidget* source,
+                         ProjectListWidget* target);
 
 private:
-	Ui::ProjectDialog* _pProjectDialog ;
+    Ui::ProjectDialog* _pProjectDialog ;
 };
 
 } // namespace prch

@@ -35,7 +35,7 @@
     </widget>
    </item>
    <item row="1" column="0" rowspan="4">
-    <widget class="ProjectListWidget" name="_projectA"/>
+    <widget class="prch::ProjectListWidget" name="_projectA"/>
    </item>
    <item row="1" column="1">
     <spacer name="verticalSpacer">
@@ -51,10 +51,10 @@
     </spacer>
    </item>
    <item row="1" column="2" rowspan="4">
-    <widget class="ProjectListWidget" name="_projectB"/>
+    <widget class="prch::ProjectListWidget" name="_projectB"/>
    </item>
    <item row="2" column="1">
-    <widget class="QToolButton" name="toolButton">
+    <widget class="QToolButton" name="_leftBtn">
      <property name="text">
       <string>...</string>
      </property>
@@ -65,7 +65,7 @@
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QToolButton" name="toolButton_2">
+    <widget class="QToolButton" name="_rightBtn">
      <property name="text">
       <string>...</string>
      </property>
@@ -92,14 +92,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ProjectListWidget</class>
+   <class>prch::ProjectListWidget</class>
    <extends>QListWidget</extends>
    <header>projectlistwidget.hpp</header>
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>toolButton_2</tabstop>
-  <tabstop>toolButton</tabstop>
+  <tabstop>_rightBtn</tabstop>
+  <tabstop>_leftBtn</tabstop>
   <tabstop>_projectA</tabstop>
   <tabstop>_projectB</tabstop>
  </tabstops>
