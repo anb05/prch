@@ -31,8 +31,8 @@ public:
     ProjectDialog& operator= (ProjectDialog&& )      = delete;
 
 public slots:
-    void onLeftButtonClicked(QAction*);
-    void onRightButtonClicked(QAction*);
+    void onLeftButtonClicked();
+    void onRightButtonClicked();
 
 private:
     void moveCurrentItem(ProjectListWidget* source,

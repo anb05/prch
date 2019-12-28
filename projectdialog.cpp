@@ -3,7 +3,6 @@
 #include "ui_projectdialog.h"
 
 #include <QToolButton>
-#include <QAction>
 
 namespace prch {
 
@@ -28,17 +27,11 @@ ProjectDialog::ProjectDialog(QWidget *parent)
     _pProjectDialog->_projectB->addItem("Eugene O'Neill");
     _pProjectDialog->_projectB->addItem("Sigrid Undset");
 
-    connect(_pProjectDialog->_leftBtn, &QToolButton::triggered,
+    connect(_pProjectDialog->_leftBtn, &QToolButton::clicked,
             this,                      &ProjectDialog::onLeftButtonClicked);
 
-    connect(_pProjectDialog->_rightBtn, &QToolButton::triggered,
+    connect(_pProjectDialog->_rightBtn, &QToolButton::clicked,
             this,                       &ProjectDialog::onRightButtonClicked);
-
-//    connect(_pProjectDialog->_leftBtn, SIGNAL(triggered(QAction*)),
-//            this,                      SLOT(onLeftButtonClicked()));
-
-//    connect(_pProjectDialog->_rightBtn, &QToolButton::triggered,
-//            this,                       &ProjectDialog::onRightButtonClicked);
 }
 
 ProjectDialog::~ProjectDialog()
@@ -47,16 +40,14 @@ ProjectDialog::~ProjectDialog()
 }
 
 
-void ProjectDialog::onLeftButtonClicked(QAction*)
+void ProjectDialog::onLeftButtonClicked()
 {
-    printf("%s\n",__func__);
     moveCurrentItem(_pProjectDialog->_projectB,
                     _pProjectDialog->_projectA);
 }
 
-void ProjectDialog::onRightButtonClicked(QAction*)
+void ProjectDialog::onRightButtonClicked()
 {
-    printf("%s\n",__func__);
     moveCurrentItem(_pProjectDialog->_projectA,
                     _pProjectDialog->_projectB);
 }
